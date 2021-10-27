@@ -1,0 +1,19 @@
+{
+  "name": "wolf-chews-tweets",
+  "version": "1.0.0",
+  "description": "Display random tweet using the data from wolf-chews-tweets.",
+  "main": "wolf-chews.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ohmykreee/wolf-chews-tweets.git"
+  },
+  "author": "Kreee",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ohmykreee/wolf-chews-tweets/issues"
+  },
+  "homepage": "https://github.com/ohmykreee/wolf-chews-tweets#readme"
+}
