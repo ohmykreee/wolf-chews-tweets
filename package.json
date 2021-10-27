@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "Display random tweet using the data from wolf-chews-tweets.",
   "main": "wolf-chews.js",
+  "devDependencies": {
+    "grunt": "^1.4.1",
+    "grunt-contrib-cssmin": "^4.0.0",
+    "grunt-contrib-uglify": "^5.0.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node -e \"var g = require('grunt'); g.cli.tasks = ['build']; g.cli()\""
   },
   "repository": {
     "type": "git",

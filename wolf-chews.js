@@ -122,7 +122,6 @@ class WolfChewsElement extends HTMLElement{
         } catch (e) {
             throw this._throwException('render widgets', e)
         }
-
     }
 
     _renderGallery(text, screen_name, url, media) {
@@ -149,7 +148,7 @@ class WolfChewsElement extends HTMLElement{
             // render hr
             hr_node.setAttribute('style', 'margin: 16px;')
             wct_container.appendChild(hr_node)
-            // render img div
+            // render swiper div
             let node_swiper_wrapper = document.createElement('div')
             node_swiper_wrapper.setAttribute('class', 'swiper-wrapper')
             let node_swiper_pagination = document.createElement('div')
@@ -189,7 +188,6 @@ class WolfChewsElement extends HTMLElement{
             } catch(e) {
                 throw this._throwException('render gallery', e)
             }
-
         }
     }
 
