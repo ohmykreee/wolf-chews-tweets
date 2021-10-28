@@ -1,6 +1,6 @@
 {
   "name": "wolf-chews-tweets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Display random tweet using the data from wolf-chews-tweets.",
   "main": "wolf-chews.js",
   "devDependencies": {
