@@ -131,7 +131,7 @@ class WolfChewsElement extends HTMLElement{
         let hr_node = document.createElement('hr')
 
         // render img div
-        if (media.length != 0) {
+        if (media.length > 1) {
             // render hr
             hr_node.setAttribute('style', 'margin: 16px;')
             wct_container.appendChild(hr_node)
@@ -147,8 +147,8 @@ class WolfChewsElement extends HTMLElement{
             for (let i = 0; i < media.length; i = i + 1) {
                 let node_slide = document.createElement('div')
                 node_slide.setAttribute('class', 'swiper-slide')
-                let node_content = document.createElement('object')
-                node_content.setAttribute('data', media[i])
+                let node_content = document.createElement('img')
+                node_content.setAttribute('src', media[i])
                 node_slide.appendChild(node_content)
                 node_slide.setAttribute('style', 'text-align: center;')
                 node_swiper_wrapper.appendChild(node_slide)
@@ -175,6 +175,14 @@ class WolfChewsElement extends HTMLElement{
             } catch(e) {
                 throw this._throwException('render gallery', e)
             }
+        } else if (media.length == 1) {
+            // render hr
+            hr_node.setAttribute('style', 'margin: 16px;')
+            wct_container.appendChild(hr_node)
+            // render img
+            let node_content = document.createElement('img')
+            node_content.setAttribute('src', media[0])
+            wct_container.appendChild(node_content)
         }
     }
 
@@ -211,6 +219,7 @@ class WolfChewsElement extends HTMLElement{
     }
 
     renderLikes (data, method, index) {
+        // console.log(index)
         // get basic data
         // console.log(index)
         let id = data[index].id_str
