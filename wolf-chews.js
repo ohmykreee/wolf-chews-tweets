@@ -22,7 +22,10 @@ class WolfChewsElement extends HTMLElement{
         this.appendChild(wct_container)
 
         // show loading status if Internet is slow
-        let loading_node = document.createTextNode('🐺 loading... 🐺')
+        let loading_node_text = document.createTextNode('🐺 loading... 🐺')
+        let loading_node = document.createElement('div')
+        loading_node.setAttribute('id', 'wct_loading')
+        loading_node.appendChild(loading_node_text)
         wct_container.appendChild(loading_node)
         wct_container.setAttribute('class', 'loading')
         
@@ -93,7 +96,8 @@ class WolfChewsElement extends HTMLElement{
     }
 
     _clearContainerStates() {
-        wct_container.textContent = ''
+        let loading_node = document.getElementById('wct_loading')
+        wct_container.removeChild(loading_node)
         wct_container.removeAttribute('class')
     }
 
@@ -105,14 +109,13 @@ class WolfChewsElement extends HTMLElement{
                 {
                   theme: theme,
                 }
-              ).then(this._clearContainerStates());
-        } catch (e) {
-            throw this._throwException('render widgets', e)
-        }
+              ).then(this._clearContainerStates())
+            } catch (e) {
+                throw this._throwException('render widgets', e)
+            }
     }
 
     _renderGallery(text, screen_name, url, media) {
-        this._clearContainerStates()
         wct_container.setAttribute('class', 'tw-gallery')
 
         // render information div and put in front of img div
@@ -184,6 +187,8 @@ class WolfChewsElement extends HTMLElement{
             node_content.setAttribute('src', media[0])
             wct_container.appendChild(node_content)
         }
+
+        this._clearContainerStates()
     }
 
     renderTweets(data, method, index) {
