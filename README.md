@@ -1,3 +1,10 @@
+# !! Project Archived !!
+Due to the new policy of Twitter API, there are no free version of Twitter API avaliable. This project is in archive status. 
+
+(Maybe next project will be a simple Twitter widget that uses information from [zedeus/nitter](https://github.com/zedeus/nitter).
+
+-----
+
 # Wolf-Chews-Tweets
 
 [![npm version](https://img.shields.io/npm/v/wolf-chews-tweets.svg?style=flat)](https://www.npmjs.com/package/wolf-chews-tweets)
